@@ -10,10 +10,19 @@
   
   //CODE HERE
 
+  function myFunc() {
+    const myStr = 'super secret string';
+     function getSecretString() {
+      return `${myStr}`
+    }
+    return getSecretString
+  }
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
   //CODE HERE
+
+  const secretString = myFunc()
   
   
   ////////////PROBLEM 2////////////
@@ -30,21 +39,34 @@
   
   //CODE HERE
 
+  function lightSwitch() {
+    let isTheLightOn = false
+    function flipTheSwitch(){
+      if(!isTheLightOn  === false){
+      return 'The light is on'
+      } else return 'The light is off'
+    }
+    return flipTheSwitch
+  }
+
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
   //CODE HERE
 
+  let kitchenSwitch = lightSwitch()
+
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
-  
+
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
-  
+
+  let bathroomSwitch = lightSwitch()
   
   //Invoke bathroomSwitch twice.
   
@@ -66,6 +88,25 @@
   //CODE HERE
 
 
+  function plantTracker() {
+    let plant = 'fern';
+    let height = 12;
+    return {
+    readInfo(){
+      return `This is a ${plant} plant that is ${height} inches tall.`
+    },
+    waterPlant(){
+      let addHeight = height + 1
+      return addHeight
+    },
+    prunePlant(){
+      let subtractHeight = height - 1
+      return subtractHeight
+    },
+    }
+  }
+
+
   ////////////PROBLEM 4////////////
 
   /*
@@ -79,6 +120,22 @@
   */
 
   //CODE HERE
+  
+
+  function inventory() {
+    let products = [];
+    return {
+      readProducts(){
+        return products
+      },
+      addToProducts(){
+        products.push('')
+      },
+      deleteFromProducts(index) {
+        products.splice(index, 1)
+      },
+    }
+  }
 
 
   /*
@@ -87,10 +144,13 @@
 
   //CODE HERE
 
+  const shoes = inventory()
 
   /*
     Add an item to your shoes array using the addToProducts function
   */
 
   //CODE HERE
+
+  products.addToProducts('nike')
 
